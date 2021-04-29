@@ -4,13 +4,13 @@
 		<meta charset="UTF-8">
 
 		<title>Twitter clone</title>
-		
+
 		<!-- jquery - link cdn -->
 		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
 		<!-- bootstrap - link cdn -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	
+
 	</head>
 
 	<body>
@@ -27,7 +27,7 @@
 	          </button>
 	          <img src="imagens/icone_twitter.png" />
 	        </div>
-	        
+
 	        <div id="navbar" class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav navbar-right">
 	            <li><a href="index.php">Voltar para Home</a></li>
@@ -38,7 +38,7 @@
 
 
 	    <div class="container">
-	    	
+
 	    	<br /><br />
 
 	    	<div class="col-md-4"></div>
@@ -53,11 +53,11 @@
 					<div class="form-group">
 						<input type="email" class="form-control" id="email" name="email" placeholder="Email" required="requiored">
 					</div>
-					
+
 					<div class="form-group">
 						<input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required="requiored">
 					</div>
-					
+
 					<button type="submit" class="btn btn-primary form-control">Inscreva-se</button>
 				</form>
 			</div>
@@ -73,8 +73,8 @@
 
 
 	    </div>
-	
+
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	
+
 	</body>
 </html>

@@ -1,3 +1,9 @@
+<?php
+
+	$erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
+
+?>
+
 <!DOCTYPE HTML>
 <html lang="pt-br">
 	<head>
@@ -10,9 +16,9 @@
 
 		<!-- bootstrap - link cdn -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	
+
 		<script>
-			// código javascript						
+			// código javascript
 		</script>
 	</head>
 
@@ -30,11 +36,11 @@
 	          </button>
 	          <img src="imagens/icone_twitter.png" />
 	        </div>
-	        
+
 	        <div id="navbar" class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav navbar-right">
 	            <li><a href="inscrevase.php">Inscrever-se</a></li>
-	            <li class="">
+	            <li class="<?=$erro == 1 ? 'open' : '';?>">
 	            	<a id="entrar" data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entrar</a>
 					<ul class="dropdown-menu" aria-labelledby="entrar">
 						<div class="col-md-12">
@@ -44,16 +50,25 @@
 								<div class="form-group">
 									<input type="text" class="form-control" id="campo_usuario" name="usuario" placeholder="Usuário" />
 								</div>
-								
+
 								<div class="form-group">
 									<input type="password" class="form-control red" id="campo_senha" name="senha" placeholder="Senha" />
 								</div>
-								
+
 								<button type="buttom" class="btn btn-primary" id="btn_login">Entrar</button>
 
 								<br /><br />
-								
+
 							</form>
+
+							<?php
+
+								if ($erro == 1) {
+									echo '<font color="#FF0000">Usuário e ou senha inválido(s)</font>';
+								}
+
+							?>
+
 						</form>
 				  	</ul>
 	            </li>
@@ -76,8 +91,8 @@
 
 
 	    </div>
-	
+
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	
+
 	</body>
 </html>
