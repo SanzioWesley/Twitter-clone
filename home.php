@@ -33,6 +33,7 @@
 							method: 'POST',
 							data: $('#form_tweet').serialize(),
 							success: function(data){
+								$('#texto_tweet').val('');
 								alert(data);
 							}
 
