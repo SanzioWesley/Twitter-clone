@@ -1,3 +1,10 @@
+<?php
+
+	$erro_usuario = isset($_GET['erro_usuario']) ? $_GET['erro_usuario'] : 0;
+	$erro_email = isset($_GET['erro_email']) ? $_GET['erro_email'] : 0;
+
+?>
+
 <!DOCTYPE HTML>
 <html lang="pt-br">
 	<head>
@@ -47,29 +54,39 @@
 	    		<br />
 				<form method="post" action="registra_usuario.php" id="formCadastrarse">
 					<div class="form-group">
-						<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuário" required="requiored">
+						<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuário" required="required">
+						<?php
+							if ($erro_usuario) {
+								echo '<font style="color:#FF0000">Usuário já existe</font>';
+							}
+						?>
 					</div>
 
 					<div class="form-group">
-						<input type="email" class="form-control" id="email" name="email" placeholder="Email" required="requiored">
+						<input type="email" class="form-control" id="email" name="email" placeholder="Email" required="required">
+						<?php
+							if ($erro_email) {
+								echo '<font style="color:#FF0000">Email já existe</font>';
+							}
+						?>
 					</div>
 
-					<div class="form-group">
-						<input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required="requiored">
-					</div>
+						<div class="form-group">
+							<input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required="requiored">
+						</div>
 
-					<button type="submit" class="btn btn-primary form-control">Inscreva-se</button>
-				</form>
+						<button type="submit" class="btn btn-primary form-control">Inscreva-se</button>
+					</form>
+				</div>
+				<div class="col-md-4"></div>
+
+				<div class="clearfix"></div>
+				<br />
+				<div class="col-md-4"></div>
+				<div class="col-md-4"></div>
+				<div class="col-md-4"></div>
+
 			</div>
-			<div class="col-md-4"></div>
-
-			<div class="clearfix"></div>
-			<br />
-			<div class="col-md-4"></div>
-			<div class="col-md-4"></div>
-			<div class="col-md-4"></div>
-
-		</div>
 
 
 	    </div>
