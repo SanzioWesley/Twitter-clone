@@ -10,47 +10,46 @@
 <html lang="pt-br">
 	<head>
 		<meta charset="UTF-8">
+
 		<title>Twitter clone</title>
+
 		<!-- jquery - link cdn -->
 		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
 		<!-- bootstrap - link cdn -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
 		<script type="text/javascript">
 
 			$(document).ready(function(){
-				$('#btn_tweet').click(function(){
-					if($('#texto_tweet').val().length > 0){
 
+				$('#btn_tweet').click(function(){
+
+					if($('#texto_tweet').val().length > 0){
+						
 						$.ajax({
 							url: 'inclui_tweet.php',
 							method: 'POST',
 							data: $('#form_tweet').serialize(),
 							success: function(data){
 								$('#texto_tweet').val('');								
-								alert('Tweet incluído com sucesso!!!');
+								atualizaTweet();
 							}
-
 						});
-
 					}
-
 				});
 
 				function atualizaTweet(){
 					//carregar os tweets
+
 					$.ajax({
 						url: 'get_tweet.php',
 						success: function(data){
 							$('#tweets').html(data);
-
 						}
-
 					});
-
 				}
-
 				atualizaTweet();
-
 			});
 
 		</script>
